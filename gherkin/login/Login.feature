@@ -6,9 +6,9 @@ Característica: Iniciar sesión dentro la aplicación
 
   Escenario: Acceso exitoso.
 
-    Dado: Tener una cuenta activa
-    Cuando: Envía su correo y contraseña
-    Entonces: Debería tener acceso para iniciar el sistema de Mesa de Ayuda e ir a la pantalla de solicitud de soporte
+    Dado : Tener una cuenta activa
+    Cuando : Envía su correo y contraseña
+    Entonces : Debería tener acceso para iniciar el sistema de Mesa de Ayuda e ir a la pantalla de solicitud de soporte
         y tener la vista del menú
               | Solicitar Soporte                         |
               | Consultas Hechas                          |
@@ -18,16 +18,17 @@ Característica: Iniciar sesión dentro la aplicación
 
   Escenario: Usuario no puede ingresar al sistema
 
-    Dado: El usuario no se encuentra registrado en el dominio
-    Cuando: Intenta ingresar al sistema
-    Entonces: Sale mensaje de error 403 Forbidden: no se encuentra registrado en el dominio
+    Dado : El usuario no se encuentra registrado en el dominio
+    Cuando : Intenta ingresar al sistema
+    Entonces : Sale mensaje de error 403 Forbidden: no se encuentra registrado en el dominio
 
 
   Escenario: Usuario no puede ingresar al sistema
 
-    Dado: El usuario no cuenta con internet
-    Cuando: Intenta ingresar al sistema
-    Entonces: Sale mensaje de error 404 Not Found
+    Dado : El usuario no cuenta con internet
+    Cuando : Intenta ingresar al sistema
+    Entonces : Sale mensaje de error 404 Not Found
+
 
 
 
