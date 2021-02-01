@@ -14,16 +14,10 @@ Característica: Solicitar un soporte
         Y : da el botón de enviar
     Entonces : Debería enviarse la solicitud
         Y : Salir un mensaje de 200 ok: Mensaje enviado con éxito.
+        Y : Redireccionar a la pantalla de consultas-hechas
 
 
 
-
-    Escenario: El usuario desea limpiar todos los datos en pantalla
-
-    Dado : El usuario tiene la sesión iniciada correctamente
-    Cuando : el usuario desea limpiar todos los datos en pantalla
-        Y : le da al botón de limpiar
-    Entonces : todos los datos a llenar se vuelven a sus estados predeterminados (en blanco)
 
 
 
