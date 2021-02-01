@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "217f1c9c-5c89-4afa-af09-43a66feeac80",
+		"name": "MDA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Lista de usuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/user",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar un usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"nombre\",\r\n    \"ap_paterno\":\"ap_paterno\",\r\n    \"ap_materno\":\"ap_materno\",\r\n    \"rol\":\"ADMIN\",\r\n    \"email\": \"admin1@epsas.com\",\r\n    \"password\": 12345678\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/user",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"user"
+							]
+						},
+						"description": "- `nombre`: Obligatorio.\r\n- `ap_paterno`: Obligatorio.\r\n- `ap_materno`: Obligatorio.\r\n- `rol`: Obligatorio, solo acepta los valores: `ADMIN`,`SUPERVISOR`,`TECNICO`.\r\n- `email`: Obligatorio, unico.\r\n- `password`: Obligatorio, minimo 8 caracteres."
+					},
+					"response": []
+				},
+				{
+					"name": "Mostrar los datos de un usurio por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"nombre\",\r\n    \"ap_paterno\":\"ap_paterno\",\r\n    \"ap_materno\":\"ap_materno\",\r\n    \"rol\":\"ADMIN\",\r\n    \"email\": \"admin@epsas.com\",\r\n    \"password\": 12345678\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/user/2",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar los datos de un usuario por id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"nombre1\",\r\n    \"ap_paterno\":\"ap_paterno1\",\r\n    \"ap_materno\":\"ap_materno1\",\r\n    \"rol\":\"ADMIN\",\r\n    \"email\": \"admin@epsas.com\",\r\n    \"password\": 12345678\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/user/2",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"user",
+								"2"
+							]
+						},
+						"description": "- `nombre`: Obligatorio.\r\n- `ap_paterno`: Obligatorio.\r\n- `ap_materno`: Obligatorio.\r\n- `rol`: Obligatorio, solo acepta los valores: `ADMIN`,`SUPERVISOR`,`TECNICO`.\r\n- `email`: Obligatorio, unico.\r\n- `password`: Obligatorio, minimo 8 caracteres."
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un usuario por id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/user/3",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"user",
+								"3"
+							]
+						},
+						"description": "# El usuario no se elimina, solo se inhabilita"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login de usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let resp = pm.response.json();\r",
+							"\r",
+							"if(resp.token){\r",
+							"    let token = resp.token;\r",
+							"    pm.environment.set(\"token\", 'Bearer '+ token);\r",
+							"}else{\r",
+							"    console.log(\"No se actualizo el token\");\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"prueba@epsas.com\",\r\n    \"password\": 12345678\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/login",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"login"
+					]
+				},
+				"description": "- `email`: Obligatorio.\r\n- `password`: Obligatorio."
+			},
+			"response": []
+		}
+	]
+}
