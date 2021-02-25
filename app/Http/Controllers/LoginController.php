@@ -10,21 +10,19 @@ class LoginController extends Controller
 {
     function login(Request $request)
     {
-        $user= User::where('email', $request->email)->first();
-            if (!$user || !Hash::check($request->password, $user->password)) {
-                return response([
-                    'Mensaje' => ['No se encuentran credenciales.']
-                ], 404);
-            }
+        $user = User::where('email', $request->email)->first();
+        if (!$user || !Hash::check($request->password, $user->password)) {
 
-             $token = $user->createToken('my-app-token')->plainTextToken;
+            return response()->json([
+                'Mensaje' => 'No se encuentran credenciales.'
+            ], 401);
+        }
+        $token = $user->createToken('my-app-token')->plainTextToken;
 
-            $response = [
-                'user' => $user,
-                'token' => $token
-            ];
-
-             return response($response, 201);
+        return response()->json([
+            'user' => $user,
+            'token' => $token
+        ], 200);
     }
 
     function users()
