@@ -2,8 +2,19 @@
 version: '3.7'
 services:
     frontend:
-        image:
+        image: camilemuz/mda-frontend
 
+    db:
+        container_name: mda-db
+        image: postgresql13.1
+        restar: always
+        environment: 
+            POSTGRES_PASSWORD: 1234
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
 
 
     laravel.test:
@@ -34,20 +45,20 @@ services:
     #         - sail
     #     depends_on:
     #         - laravel.test
-    mysql:
-        image: 'mysql:8.0'
-        ports:
-            - '${FORWARD_DB_PORT:-3306}:3306'
-        environment:
-            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
-            MYSQL_DATABASE: '${DB_DATABASE}'
-            MYSQL_USER: '${DB_USERNAME}'
-            MYSQL_PASSWORD: '${DB_PASSWORD}'
-            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-        volumes:
-            - 'sailmysql:/var/lib/mysql'
-        networks:
-            - sail
+    # mysql:
+    #     image: 'mysql:8.0'
+    #     ports:
+    #         - '${FORWARD_DB_PORT:-3306}:3306'
+    #     environment:
+    #         MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+    #         MYSQL_DATABASE: '${DB_DATABASE}'
+    #         MYSQL_USER: '${DB_USERNAME}'
+    #         MYSQL_PASSWORD: '${DB_PASSWORD}'
+    #         MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    #     volumes:
+    #         - 'sailmysql:/var/lib/mysql'
+    #     networks:
+    #         - sail
     redis:
         image: 'redis:alpine'
         ports:

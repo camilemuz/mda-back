@@ -21,8 +21,7 @@ class UsersTableSeeder extends Seeder
             'ap_paterno'=>'Prueba',
             'ap_materno'=>'Prueba',
             'email'  =>  'prueba@epsas.com' ,
-            'password'  =>  Hash::make( '12345678' ),
-            'rol'=>'ADMIN',
+            'password'  =>  Hash::make( '12345678' )
 
         ]);
     }
