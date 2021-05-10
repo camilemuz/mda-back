@@ -33,19 +33,23 @@ class UserController extends Controller
             'nombre' => ['required'],
             'ap_paterno' => ['required'],
             'ap_materno' => ['required'],
+            'unidad' => ['required'],
             'email' => ['required', 'email:rfc,dns', 'unique:users,email'],
             'password' => ['required', 'min:8'],
-            'rol' => ['required']
+            'rol' => ['required'],
+
         ]);
         $user = new User();
         $user->nombre = $request->nombre;
         $user->ap_paterno = $request->ap_paterno;
         $user->ap_materno = $request->ap_materno;
-        $user->rol = $request->rol;
+        $user->unidad = $request->unidad;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->rol = $request->rol;
+
         $user->save();
-        
+
         return response()->json(['data' => $user], 201);
 
     }
@@ -75,17 +79,20 @@ class UserController extends Controller
             'nombre' => ['required'],
             'ap_paterno' => ['required'],
             'ap_materno' => [],
-            'email' => ['required', "unique:users,email,{$id},id"],
-            'password' => ['required', 'min:8'],
-            'rol' => ['required']
+            //'email' => ['required', "unique:users,email,{$id},id"],
+           // 'password' => ['required', 'min:8'],
+            'rol' => ['required'],
+            'unidad' => ['required'],
+
         ]);
         $user = User::findOrFail($id);
         $user->nombre = $request->input('nombre');
         $user->ap_paterno = $request->input('ap_paterno');
         $user->ap_materno = $request->input('ap_materno');
-        $user->email = $request->input('email');
-        $user->password = $request->input('password');
+        //$user->email = $request->input('email');
+        //$user->password = $request->input('password');
         $user->rol = $request->input('rol');
+        $user->unidad = $request->input('unidad');
         $user->save();
 
         return response()->json(['data' => $user], 201);

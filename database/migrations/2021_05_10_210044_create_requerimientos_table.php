@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRoleUserTable extends Migration
+class CreateRequerimientosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateRoleUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('role_user', function (Blueprint $table) {
+        Schema::create('requerimientos', function (Blueprint $table) {
             $table->id();
-            $table->interger('role-id')->unsigned();
-            $table->interger('user-id')->unsigned();
+            $table->string("descripcion");
+            $table->dateTime("Fecha de atención");
+            $table->string("estado",5);
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateRoleUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('role_user');
+        Schema::dropIfExists('requerimientos');
     }
 }
