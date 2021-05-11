@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRequerimientosTable extends Migration
+class CreateMunicipiosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateRequerimientosTable extends Migration
      */
     public function up()
     {
-        Schema::create('requerimientos', function (Blueprint $table) {
+        Schema::create('municipios', function (Blueprint $table) {
             $table->id();
-            $table->string("descripcion");
-            $table->dateTime("fecha_atencion");
-            $table->string("estado");
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateRequerimientosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('requerimientos');
+        Schema::dropIfExists('municipios');
     }
 }

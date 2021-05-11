@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Requerimiento extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'descripcion',
+        'fecha_atencion',
+        'estado',
+
+    ];
 }

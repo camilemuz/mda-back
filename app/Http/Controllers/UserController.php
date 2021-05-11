@@ -32,8 +32,8 @@ class UserController extends Controller
         $this->validate($request, [
             'nombre' => ['required'],
             'ap_paterno' => ['required'],
-            'ap_materno' => ['required'],
-            'unidad' => ['required'],
+            'ap_materno' => [],
+            'unidad' => [],
             'email' => ['required', 'email:rfc,dns', 'unique:users,email'],
             'password' => ['required', 'min:8'],
             'rol' => ['required'],
@@ -82,7 +82,7 @@ class UserController extends Controller
             //'email' => ['required', "unique:users,email,{$id},id"],
            // 'password' => ['required', 'min:8'],
             'rol' => ['required'],
-            'unidad' => ['required'],
+            'unidad' => [],
 
         ]);
         $user = User::findOrFail($id);
