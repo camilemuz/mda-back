@@ -15,6 +15,7 @@ class RequerimientoController extends Controller
     public function index()
     {
         $requerimientos = Requerimiento::all();
+        //return 'holll';
         return response()->json(['data' => $requerimientos], 200);
     }
 
@@ -51,9 +52,10 @@ class RequerimientoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show(Requerimiento $requerimiento)
+    public function show(int $id)
     {
-        return response()->json(['data' => $requerimiento], 200);
+        return response()->json(['data' => Requerimiento::findOrFail($id)], 200);
+        /*return $requerimientos;*/
     }
 
 

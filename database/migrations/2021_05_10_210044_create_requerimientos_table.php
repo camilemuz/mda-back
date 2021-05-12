@@ -14,11 +14,13 @@ class CreateRequerimientosTable extends Migration
     public function up()
     {
         Schema::create('requerimientos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string("descripcion");
             $table->dateTime("fecha_atencion");
             $table->string("estado");
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('User');
         });
     }
 

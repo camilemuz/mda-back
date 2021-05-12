@@ -17,7 +17,7 @@ class Requerimiento extends Model
     protected $fillable = [
         'descripcion',
         'fecha_atencion',
-        'estado',
+        'estado'
 
     ];
 }
