@@ -22,6 +22,7 @@ class UsersTableSeeder extends Seeder
             'ap_materno'=>'Prueba',
             'email'  =>  'prueba@epsas.com' ,
             'rol'=> 'ADMIN',
+            'cargo'=>'Gerente',
             'unidad'=>'Seguridad Informática',
             'password'  =>  Hash::make( '12345678' )
 
@@ -34,6 +35,7 @@ class UsersTableSeeder extends Seeder
             'ap_materno'=>'Admin',
             'email'  =>  'admin@epsas.com' ,
             'rol'=> 'ADMIN',
+            'cargo'=> 'Oficial',
             'unidad'=>'Seguridad Informática',
             'password'  =>  Hash::make( '12345678' )
 

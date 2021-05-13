@@ -23,6 +23,7 @@ class User extends Authenticatable
         'ap_paterno',
         'ap_materno',
         'rol',
+        'cargo',
         'unidad',
         'email',
         'password',

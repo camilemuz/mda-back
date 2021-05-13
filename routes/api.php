@@ -28,3 +28,5 @@ Route::put('req', [\App\Http\Controllers\RequerimientoController::class, 'update
 Route::put('req', [\App\Http\Controllers\RequerimientoController::class, 'update']);*/
 
 Route::resource('req', \App\Http\Controllers\RequerimientoController::class);
+
+Route::resource('estado', \App\Http\Controllers\EstadoController::class);
