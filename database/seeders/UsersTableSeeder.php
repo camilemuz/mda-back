@@ -27,5 +27,17 @@ class UsersTableSeeder extends Seeder
 
 
         ]);
+
+        DB::table( 'users' )->insert([
+            'nombre'=>'Admin',
+            'ap_paterno'=>'Admin',
+            'ap_materno'=>'Admin',
+            'email'  =>  'admin@epsas.com' ,
+            'rol'=> 'ADMIN',
+            'unidad'=>'Seguridad Informática',
+            'password'  =>  Hash::make( '12345678' )
+
+
+        ]);
     }
 }
