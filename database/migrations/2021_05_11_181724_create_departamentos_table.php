@@ -14,12 +14,12 @@ class CreateDepartamentosTable extends Migration
     public function up()
     {
         Schema::create('departamentos', function (Blueprint $table) {
-            $table->char('id',5)->primary();
+            $table->increments('id');
+            $table->char('cod',7);
             $table->string('nombre_departamento');
             $table->timestamps();
 
-            $table->char('id_sucursal')->nullable();
-            $table->foreign('id_sucursal')->references('id_sucursals')->on('sucursals');
+
         });
     }
 

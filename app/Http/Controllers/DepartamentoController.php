@@ -29,15 +29,15 @@ class DepartamentoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'id' => ['required'],
+            'cod' => ['required'],
             'nombre_departamento' => ['required'],
-            'id_sucursal' => ['required'],
+           /* 'id_dptosucur' => ['required'],*/
 
         ]);
-        $departamento = new Estado();
-        $departamento->id = $request->id;
+        $departamento = new Departamento();
+        $departamento->cod = $request->cod;
         $departamento->nombre_departamento = $request->nombre_departamento;
-        $departamento->id_sucursal = $request->id_sucursal;
+        /*$departamento->id_dptosucur = $request->id_dptosucur;*/
         $departamento->save();
 
         return response()->json(['data' => $departamento], 201);
@@ -46,7 +46,7 @@ class DepartamentoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  char  $id
+     * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function show($id)
@@ -60,21 +60,21 @@ class DepartamentoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  char  $id
+     * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'id' => ['required'],
+            'cod' => ['required'],
             'nombre_departamento' => [],
-            'id_sucursal' => [],
+           /* 'id_dptosucur' => [],*/
 
         ]);
         $departamento = Departamento::findOrFail($id);
-        $departamento->id = $request->input('id');
+        $departamento->cod = $request->input('cod');
         $departamento->nombre_departamento = $request->input('nombre_departamento');
-        $departamento->id_sucursal = $request->input('id_sucursal');
+        /*$departamento->id_dptosucur = $request->input('id_dptosucur');*/
         $departamento->save();
 
         return response()->json(['data' => $departamento], 201);
@@ -83,7 +83,7 @@ class DepartamentoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  char  $id
+     * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)

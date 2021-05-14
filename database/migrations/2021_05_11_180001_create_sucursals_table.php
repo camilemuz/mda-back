@@ -14,12 +14,13 @@ class CreateSucursalsTable extends Migration
     public function up()
     {
         Schema::create('sucursals', function (Blueprint $table) {
-            $table->char('id_sucursals',5)->primary();
+            $table->increments('id');
+            $table->char('cod',7);
             $table->string('nombre_sucursal');
             $table->timestamps();
 
-            $table->char('id_municipios');
-            $table->foreign('id_municipios')->references('id')->on('municipios');
+            $table->integer('id_municipio');
+            $table->foreign('id_municipio')->references('id')->on('municipios');
 
         });
     }

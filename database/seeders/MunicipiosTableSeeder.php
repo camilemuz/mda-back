@@ -15,13 +15,13 @@ class MunicipiosTableSeeder extends Seeder
     public function run()
     {
         DB::table( 'municipios' )->insert([
-            'id'=>'M1LPZ',
+            'cod'=>'M1LPZ',
             'nombre_municipio'=>'La Paz',
 
         ]);
 
         DB::table( 'municipios' )->insert([
-            'id'=>'M2EA',
+            'cod'=>'M2EA',
             'nombre_municipio'=>'El Alto',
 
         ]);

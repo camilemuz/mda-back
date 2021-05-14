@@ -29,15 +29,15 @@ class SucursalController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'id_sucursals' => ['required'],
+            'cod' => ['required'],
             'nombre_sucursal' => ['required'],
-            'id_municipios' => ['required'],
+            'id_municipio' => ['required'],
 
         ]);
-        $sucursal = new Dep();
-        $sucursal->id_sucursals = $request->id_sucursals;
+        $sucursal = new Sucursal();
+        $sucursal->cod= $request->cod;
         $sucursal->nombre_sucursal = $request->nombre_sucursal;
-        $sucursal->id_municipios = $request->id_municipios;
+        $sucursal->id_municipio = $request->id_municipio;
         $sucursal->save();
 
         return response()->json(['data' => $sucursal], 201);
@@ -46,7 +46,7 @@ class SucursalController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  char  $id
+     * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function show($id)
@@ -60,21 +60,21 @@ class SucursalController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  char  $id
+     * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'id_sucursals' => [],
+            'cod' => [],
             'nombre_sucursal' => [],
-            'id_municipios' => [],
+            'id_municipio' => [],
 
         ]);
-        $sucursal = Departamento::findOrFail($id);
-        $sucursal->id_sucursals = $request->input('id_sucursals');
+        $sucursal = Sucursal::findOrFail($id);
+        $sucursal->cod = $request->input('cod');
         $sucursal->nombre_sucursal = $request->input('nombre_sucursal');
-        $sucursal->id_municipios = $request->input('id_municipios');
+        $sucursal->id_municipio = $request->input('id_municipio');
         $sucursal->save();
 
         return response()->json(['data' => $sucursal], 201);
@@ -83,7 +83,7 @@ class SucursalController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  char  $id
+     * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)

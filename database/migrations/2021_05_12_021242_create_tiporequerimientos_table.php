@@ -14,11 +14,12 @@ class CreateTiporequerimientosTable extends Migration
     public function up()
     {
         Schema::create('tiporequerimientos', function (Blueprint $table) {
-            $table->char('id',5)->primary();
+            $table->increments('id');
+            $table->char('cod',7)->unique();
             $table->string('sub_categoria');
             $table->timestamps();
 
-            $table->char('id_categorias');
+            $table->integer('id_categorias');
             $table->foreign('id_categorias')->references('id')->on('categorias');
         });
     }

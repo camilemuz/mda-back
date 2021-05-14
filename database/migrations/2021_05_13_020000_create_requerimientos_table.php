@@ -22,19 +22,19 @@ class CreateRequerimientosTable extends Migration
             $table->integer('id_users');
             $table->foreign('id_users')->references('id')->on('users');
 
-            $table->char('id_tiporeq');
+            $table->integer('id_tiporeq');
             $table->foreign('id_tiporeq')->references('id')->on('tiporequerimientos');
 
-            $table->char('id_calificacion');
+            $table->integer('id_calificacion');
             $table->foreign('id_calificacion')->references('id')->on('calificacions');
 
-            $table->char('id_prioridad');
+            $table->integer('id_prioridad');
             $table->foreign('id_prioridad')->references('id')->on('prioridads');
 
-            $table->char('id_departamento');
+            $table->integer('id_departamento');
             $table->foreign('id_departamento')->references('id')->on('departamentos');
 
-            $table->char('id_estado');
+            $table->integer('id_estado');
             $table->foreign('id_estado')->references('id')->on('estados');
         });
     }

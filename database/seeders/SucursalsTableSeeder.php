@@ -15,61 +15,61 @@ class SucursalsTableSeeder extends Seeder
     public function run()
     {
         DB::table( 'sucursals' )->insert([
-            'id_sucursals'=>'S1VF',
+            'cod'=>'S1VF',
             'nombre_sucursal'=>'Villa Fátima',
-            'id_municipios'=>'M1LPZ'
+            'id_municipio'=>'1'
 
         ]);
 
         DB::table( 'sucursals' )->insert([
-            'id_sucursals'=>'S2SJ',
+            'cod'=>'S2SJ',
             'nombre_sucursal'=>'San Jorge',
-            'id_municipios'=>'M1LPZ'
+            'id_municipio'=>'1'
 
         ]);
         DB::table( 'sucursals' )->insert([
-            'id_sucursals'=>'S3ZS',
+            'cod'=>'S3ZS',
             'nombre_sucursal'=>'Zona Sur',
-            'id_municipios'=>'M1LPZ'
+            'id_municipio'=>'1'
 
         ]);
 
         DB::table( 'sucursals' )->insert([
-            'id_sucursals'=>'S4CO',
+            'cod'=>'S4CO',
             'nombre_sucursal'=>'Colorados',
-            'id_municipios'=>'M1LPZ'
+            'id_municipio'=>'1'
 
         ]);
         DB::table( 'sucursals' )->insert([
-            'id_sucursals'=>'S516J',
+            'cod'=>'S516J',
             'nombre_sucursal'=>'16 de Julio',
-            'id_municipios'=>'M2EA'
+            'id_municipio'=>'2'
 
         ]);
 
         DB::table( 'sucursals' )->insert([
-            'id_sucursals'=>'S6VB',
+            'cod'=>'S6VB',
             'nombre_sucursal'=>'Villa Bolívar',
-            'id_municipios'=>'M2EA'
+            'id_municipio'=>'2'
 
         ]);
         DB::table( 'sucursals' )->insert([
-            'id_sucursals'=>'S7PJ',
+            'cod'=>'S7PJ',
             'nombre_sucursal'=>'Pacajes',
-            'id_municipios'=>'M2EA'
+            'id_municipio'=>'2'
 
         ]);
 
         DB::table( 'sucursals' )->insert([
-            'id_sucursals'=>'S8SNK',
+            'cod'=>'S8SNK',
             'nombre_sucursal'=>'Senkata',
-            'id_municipios'=>'M2EA'
+            'id_municipio'=>'2'
 
         ]);
         DB::table( 'sucursals' )->insert([
-            'id_sucursals'=>'S9SR',
+            'cod'=>'S9SR',
             'nombre_sucursal'=>'San Roque',
-            'id_municipios'=>'M2EA'
+            'id_municipio'=>'2'
 
         ]);
     }

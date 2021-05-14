@@ -15,19 +15,19 @@ class EstadosTableSeeder extends Seeder
     public function run()
     {
         DB::table( 'estados' )->insert([
-            'id'=>'e1esp',
+            'cod'=>'e1esp',
             'estado'=>'En Espera',
 
         ]);
 
         DB::table( 'estados' )->insert([
-            'id'=>'e2pro',
+            'cod'=>'e2pro',
             'estado'=>'En Proceso',
 
         ]);
 
         DB::table( 'estados' )->insert([
-            'id'=>'e3cer',
+            'cod'=>'e3cer',
             'estado'=>'Cerrado',
 
         ]);

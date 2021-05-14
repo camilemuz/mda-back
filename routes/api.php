@@ -28,5 +28,8 @@ Route::put('req', [\App\Http\Controllers\RequerimientoController::class, 'update
 Route::put('req', [\App\Http\Controllers\RequerimientoController::class, 'update']);*/
 
 Route::resource('req', \App\Http\Controllers\RequerimientoController::class);
-
 Route::resource('estado', \App\Http\Controllers\EstadoController::class);
+Route::resource('municipio', \App\Http\Controllers\MunicipioController::class);
+Route::resource('sucursal', \App\Http\Controllers\SucursalController::class);
+Route::resource('dpto', \App\Http\Controllers\DepartamentoController::class);
+Route::resource('cargo', \App\Http\Controllers\CargoController::class);

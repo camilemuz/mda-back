@@ -29,13 +29,13 @@ class MunicipioController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'id' => ['required'],
-            'nombre_municipios' => ['required'],
+            'cod' => ['required'],
+            'nombre_municipio' => ['required'],
 
         ]);
         $municipio = new Municipio();
-        $municipio->id = $request->id;
-
+        $municipio->cod = $request->id;
+        $municipio->nombre_municipio=$request->nombre_municipio;
         $municipio->save();
 
         return response()->json(['data' => $municipio], 201);
@@ -44,7 +44,7 @@ class MunicipioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  char  $id
+     * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function show($id)
@@ -58,22 +58,22 @@ class MunicipioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  char  $id
+     * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'id' => [],
+            'cod' => [],
             'nombre_municipio' => [],
 
         ]);
         $municipio = Municipio::findOrFail($id);
-        $municipio->id = $request->input('id');
+        $municipio->cod = $request->input('cod');
         $municipio->nombre_municipio = $request->input('nombre_municipio');
 
 
-        $estado->save();
+        $municipio->save();
 
         return response()->json(['data' => $municipio], 201);
     }
@@ -81,14 +81,14 @@ class MunicipioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  char  $id
+     * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        $estado = Estado::findOrFail($id);
-        $estado->delete();
+        $municipio = Municipio::findOrFail($id);
+        $municipio->delete();
 
-        return response()->json(['data' => $estado], 201);
+        return response()->json(['data' => $municipio], 201);
     }
 }
