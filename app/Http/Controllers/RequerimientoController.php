@@ -100,7 +100,7 @@ class RequerimientoController extends Controller
         $requerimiento->id_tiporeq = $request->input('id_tiporeq');
         $requerimiento->id_calificacion = $request->input('id_calificacion');
         $requerimiento->id_prioridad = $request->input('id_prioridad');
-        $requerimiento->id_ubicacion = $request->input('id_ubicacion');
+        $requerimiento->id_departamento= $request->input('id_departamento');
         $requerimiento->id_estado = $request->input('id_estado');
 
         $requerimiento->save();

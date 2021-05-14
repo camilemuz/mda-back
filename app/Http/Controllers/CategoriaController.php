@@ -14,9 +14,9 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categoria = Municipio::all();
+        $categorias = Categoria::all();
 
-        return response()->json(['data' => $categoria], 200);
+        return response()->json(['data' => $categorias], 200);
     }
 
 
@@ -51,7 +51,6 @@ class CategoriaController extends Controller
     {
         return response()->json(['data' => Categoria::findOrFail($id)],200);
     }
-
 
 
     /**
