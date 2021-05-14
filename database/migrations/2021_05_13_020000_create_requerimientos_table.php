@@ -31,8 +31,8 @@ class CreateRequerimientosTable extends Migration
             $table->char('id_prioridad');
             $table->foreign('id_prioridad')->references('id')->on('prioridads');
 
-            $table->char('id_ubicacion');
-            $table->foreign('id_ubicacion')->references('id')->on('ubicacions');
+            $table->char('id_departamento');
+            $table->foreign('id_departamento')->references('id')->on('departamentos');
 
             $table->char('id_estado');
             $table->foreign('id_estado')->references('id')->on('estados');

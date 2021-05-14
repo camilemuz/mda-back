@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Estado;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
-class EstadoController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class EstadoController extends Controller
      */
     public function index()
     {
-        $estados = Estado::all();
-        //return 'holll';
-        return response()->json(['data' => $estados], 200);
+        $categoria = Municipio::all();
+
+        return response()->json(['data' => $categoria], 200);
     }
 
 
@@ -30,15 +30,15 @@ class EstadoController extends Controller
     {
         $this->validate($request, [
             'id' => ['required'],
-            'estado' => ['required'],
+            '$categoria' => ['required'],
 
         ]);
-        $estado = new Estado();
-        $estado->id = $request->id;
-        $estado->estado = $request->estado;
-        $estado->save();
+        $categoria = new Categoria();
+        $categoria->id = $request->id;
 
-        return response()->json(['data' => $estado], 201);
+        $categoria->save();
+
+        return response()->json(['data' => $categoria], 201);
     }
 
     /**
@@ -49,7 +49,7 @@ class EstadoController extends Controller
      */
     public function show($id)
     {
-        return response()->json(['data' => Estado::findOrFail($id)],200);
+        return response()->json(['data' => Categoria::findOrFail($id)],200);
     }
 
 
@@ -65,17 +65,17 @@ class EstadoController extends Controller
     {
         $this->validate($request, [
             'id' => [],
-            'estado' => [],
+            'nombre_categoria' => [],
 
         ]);
-        $estado = Estado::findOrFail($id);
-        $estado->id = $request->input('id');
-        $estado->Estado = $request->input('Estado');
+        $categoria = Categoria::findOrFail($id);
+        $categoria->id = $request->input('id');
+        $categoria->nombre_categoria = $request->input('nombre_categoria');
 
 
-        $estado->save();
+        $categoria->save();
 
-        return response()->json(['data' => $estado], 201);
+        return response()->json(['data' => $categoria], 201);
     }
 
     /**
@@ -86,9 +86,9 @@ class EstadoController extends Controller
      */
     public function destroy($id)
     {
-        $estado = Estado::findOrFail($id);
-        $estado->delete();
+        $categoria = Categoria::findOrFail($id);
+        $categoria->delete();
 
-        return response()->json(['data' => $estado], 201);
+        return response()->json(['data' => $categoria], 201);
     }
 }

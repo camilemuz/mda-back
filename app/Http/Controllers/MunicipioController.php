@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Estado;
+use App\Models\Municipio;
 use Illuminate\Http\Request;
 
-class EstadoController extends Controller
+class MunicipioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class EstadoController extends Controller
      */
     public function index()
     {
-        $estados = Estado::all();
-        //return 'holll';
-        return response()->json(['data' => $estados], 200);
+        $municipios = Municipio::all();
+
+        return response()->json(['data' => $municipios], 200);
     }
 
 
@@ -30,15 +30,15 @@ class EstadoController extends Controller
     {
         $this->validate($request, [
             'id' => ['required'],
-            'estado' => ['required'],
+            'nombre_municipios' => ['required'],
 
         ]);
-        $estado = new Estado();
-        $estado->id = $request->id;
-        $estado->estado = $request->estado;
-        $estado->save();
+        $municipio = new Municipio();
+        $municipio->id = $request->id;
 
-        return response()->json(['data' => $estado], 201);
+        $municipio->save();
+
+        return response()->json(['data' => $municipio], 201);
     }
 
     /**
@@ -49,7 +49,7 @@ class EstadoController extends Controller
      */
     public function show($id)
     {
-        return response()->json(['data' => Estado::findOrFail($id)],200);
+        return response()->json(['data' => Municipio::findOrFail($id)],200);
     }
 
 
@@ -65,17 +65,17 @@ class EstadoController extends Controller
     {
         $this->validate($request, [
             'id' => [],
-            'estado' => [],
+            'nombre_municipio' => [],
 
         ]);
-        $estado = Estado::findOrFail($id);
-        $estado->id = $request->input('id');
-        $estado->Estado = $request->input('Estado');
+        $municipio = Municipio::findOrFail($id);
+        $municipio->id = $request->input('id');
+        $municipio->nombre_municipio = $request->input('nombre_municipio');
 
 
         $estado->save();
 
-        return response()->json(['data' => $estado], 201);
+        return response()->json(['data' => $municipio], 201);
     }
 
     /**
