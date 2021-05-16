@@ -30,13 +30,13 @@ class RequerimientoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'descripcion' => ['required'],
-            'fecha_atencion' => ['required'],
-            'id_users' => ['required'],
-            'id_tiporeq' => ['required'],
+            'descripcion' => [],
+            'fecha_atencion' => [],
+            'id_users' => [],
+            'id_tiporeq' => [],
             'id_calificacion' => [],
             'id_prioridad' => [],
-            'id_ubicacion' => ['required'],
+            'id_departamento' => [],
             'id_estado' => [],
 
 
@@ -49,7 +49,7 @@ class RequerimientoController extends Controller
         $requerimiento->id_tiporeq = $request->id_tiporeq;
         $requerimiento->id_calificacion = $request->id_calificacion;
         $requerimiento->id_prioridad = $request->id_prioridad;
-        $requerimiento->id_ubicacion = $request->id_ubicacion;
+        $requerimiento->id_departamento = $request->id_departamento;
         $requerimiento->id_estado = $request->id_estado;
 
 
@@ -87,7 +87,7 @@ class RequerimientoController extends Controller
             'id_tiporeq' => [],
             'id_calificacion' => [],
             'id_prioridad' => [],
-            'id_ubicacion' => [],
+            'id_departamento' => [],
             'id_estado' => [],
 
 

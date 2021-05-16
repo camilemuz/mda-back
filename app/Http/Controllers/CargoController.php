@@ -69,7 +69,7 @@ class CargoController extends Controller
 
         ]);
         $cargo = Cargo::findOrFail($id);
-        $cargo->id = $request->input('cod');
+        $cargo->cod = $request->input('cod');
         $cargo->cargo = $request->input('cargo');
 
 

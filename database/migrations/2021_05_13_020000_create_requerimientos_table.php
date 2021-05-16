@@ -14,7 +14,7 @@ class CreateRequerimientosTable extends Migration
     public function up()
     {
         Schema::create('requerimientos', function (Blueprint $table) {
-            $table->increments('id_req');
+            $table->increments('id');
             $table->string("descripcion");
             $table->dateTime("fecha_atencion");
             $table->timestamps();

@@ -33,3 +33,7 @@ Route::resource('municipio', \App\Http\Controllers\MunicipioController::class);
 Route::resource('sucursal', \App\Http\Controllers\SucursalController::class);
 Route::resource('dpto', \App\Http\Controllers\DepartamentoController::class);
 Route::resource('cargo', \App\Http\Controllers\CargoController::class);
+Route::resource('cat', \App\Http\Controllers\CategoriaController::class);
+Route::resource('tipo', \App\Http\Controllers\TiporequerimientoController::class);
+Route::resource('q', \App\Http\Controllers\CalificacionController::class);
+Route::resource('prioridad', \App\Http\Controllers\PrioridadController::class);

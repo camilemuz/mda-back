@@ -29,12 +29,13 @@ class CalificacionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'id' => ['required'],
+            'cod' => ['required'],
             'calificacion' => ['required'],
 
         ]);
         $calificacion = new Calificacion();
-        $calificacion->id = $request->id;
+        $calificacion->cod = $request->cod;
+        $calificacion->calificacion = $request->calificacion;
 
         $calificacion->save();
 
@@ -44,7 +45,7 @@ class CalificacionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  char  $id
+     * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function show($id)
@@ -58,21 +59,19 @@ class CalificacionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  char  $id
+     * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'id' => [],
+            'cod' => [],
             'calificación' => [],
 
         ]);
         $calificacion = Categoria::findOrFail($id);
-        $calificacion->id = $request->input('id');
+        $calificacion->cod = $request->input('cod');
         $calificacion->calificacion = $request->input('calificacion');
-
-
         $calificacion->save();
 
         return response()->json(['data' => $calificacion], 201);
@@ -81,7 +80,7 @@ class CalificacionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  char  $id
+     * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
