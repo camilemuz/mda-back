@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Departamento extends Model
 {
     use HasFactory;
+
+
+    protected $table = 'departamentos';
+
+    public function requerimiento()
+    {
+        return $this->hasMany(Requerimiento::class,'id_departamento','id');
+    }
+
 }

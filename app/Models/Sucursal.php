@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Sucursal extends Model
 {
     use HasFactory;
+
+    protected $table = 'sucursals';
+
+    public function municipio()
+    {
+        return $this->belongsTo(Municipio::class,'id_municipio','id');
+    }
+
+
 }

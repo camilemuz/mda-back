@@ -18,6 +18,9 @@ class CreateCalificacionsTable extends Migration
             $table->char('cod',7)->unique();
             $table->string('calificacion')->unique();
             $table->timestamps();
+
+            $table->integer('id_users')->nullable();
+            $table->foreign('id_users')->references('id')->on('users');
         });
     }
 

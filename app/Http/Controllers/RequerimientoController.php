@@ -32,6 +32,7 @@ class RequerimientoController extends Controller
         $this->validate($request, [
             'descripcion' => [],
             'fecha_atencion' => [],
+            'interno' => [],
             'id_users' => [],
             'id_tiporeq' => [],
             'id_calificacion' => [],
@@ -45,6 +46,7 @@ class RequerimientoController extends Controller
         $requerimiento = new Requerimiento();
         $requerimiento->descripcion = $request->descripcion;
         $requerimiento->fecha_atencion = $request->fecha_atencion;
+        $requerimiento->interno = $request->interno;
         $requerimiento->id_users = $request->id_users;
         $requerimiento->id_tiporeq = $request->id_tiporeq;
         $requerimiento->id_calificacion = $request->id_calificacion;
@@ -83,6 +85,7 @@ class RequerimientoController extends Controller
         $this->validate($request, [
             'descripcion' => [],
             'fecha_atencion' => [],
+            'interno' => [],
             'id_users' => [],
             'id_tiporeq' => [],
             'id_calificacion' => [],
@@ -96,6 +99,7 @@ class RequerimientoController extends Controller
         $requerimiento = Requerimiento::findOrFail($id);
         $requerimiento->descripcion = $request->input('descripcion');
         $requerimiento->fecha_atencion = $request->input('fecha_atencion');
+        $requerimiento->interno = $request->input('interno');
         $requerimiento->id_users = $request->input('id_users');
         $requerimiento->id_tiporeq = $request->input('id_tiporeq');
         $requerimiento->id_calificacion = $request->input('id_calificacion');

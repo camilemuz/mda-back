@@ -15,11 +15,13 @@ class CreateRequerimientosTable extends Migration
     {
         Schema::create('requerimientos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string("descripcion");
-            $table->dateTime("fecha_atencion");
+            $table->string("descripcion")->nullable();
+            $table->integer("interno")->nullable();
+            $table->dateTime("fecha_atencion")->nullable();
+
             $table->timestamps();
 
-            $table->integer('id_users');
+            $table->integer('id_users')->nullable();
             $table->foreign('id_users')->references('id')->on('users');
 
             $table->integer('id_tiporeq');

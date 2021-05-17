@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Categoria extends Model
 {
     use HasFactory;
+
+    protected $table = 'categorias';
+
+    public function tiporequerimiento()
+    {
+        return $this->hasMany(Tiporequerimiento::class,'id_tiporeq','id');
+    }
+
+
 }
