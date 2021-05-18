@@ -19,8 +19,7 @@ class CreateEstadosTable extends Migration
             $table->string('estado')->unique();
             $table->timestamps();
 
-            $table->integer('id_ticket');
-            $table->foreign('id_ticket')->references('id')->on('tickets');
+
 
         });
     }

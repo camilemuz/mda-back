@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCalificacionTicketsTable extends Migration
+class CreateCalificacionTicketsUsuariosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCalificacionTicketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('calificacion-tickets', function (Blueprint $table) {
+        Schema::create('calificacion-tickets-usuarios', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
@@ -22,6 +22,9 @@ class CreateCalificacionTicketsTable extends Migration
 
             $table->integer('id_calificacion')->nullable();
             $table->foreign('id_calificacion')->references('id')->on('calificacions');
+
+            $table->integer('id_user')->nullable();
+            $table->foreign('id_user')->references('id')->on('users');
 
         });
     }

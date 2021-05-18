@@ -16,34 +16,34 @@ class DepartamentosTableSeeder extends Seeder
     {
         DB::table( 'departamentos' )->insert([
             'cod'=>'D1COM',
-            'nombre_departamento'=>'Comunicación',
+            'departamento'=>'Comunicación',
 
         ]);
 
         DB::table( 'departamentos' )->insert([
             'cod'=>'D2SIS',
-            'nombre_departamento'=>'Sistemas',
+            'departamento'=>'Sistemas',
 
         ]);
 
         DB::table( 'departamentos' )->insert([
             'cod'=>'D3ADM',
-            'nombre_departamento'=>'Administración',
+            'departamento'=>'Administración',
 
         ]);
         DB::table( 'departamentos' )->insert([
             'cod'=>'D4LEG    ',
-            'nombre_departamento'=>'legal',
+            'departamento'=>'legal',
 
         ]);
         DB::table( 'departamentos' )->insert([
             'cod'=>'D5CAT',
-            'nombre_departamento'=>'Catastro',
+            'departamento'=>'Catastro',
 
         ]);
         DB::table( 'departamentos' )->insert([
             'cod'=>'D6AMB',
-            'nombre_departamento'=>'Ambiental',
+            'departamento'=>'Ambiental',
 
         ]);
     }
