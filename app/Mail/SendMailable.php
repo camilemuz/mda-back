@@ -11,7 +11,7 @@ class SendMailable extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = "Registro en el sistema"
+    public $subject = "Registro en el sistema";
 
     /**
      * Create a new message instance.
@@ -31,6 +31,6 @@ class SendMailable extends Mailable
     public function build()
     {
        // return $this->view('view.name');
-        return $this->view('emails.registeredcount');
+        return $this->view('');
     }
 }

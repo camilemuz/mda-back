@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCalificacionsTable extends Migration
+class CreateDepartamentosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateCalificacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('calificacions', function (Blueprint $table) {
+        Schema::create('departamentos', function (Blueprint $table) {
             $table->increments('id');
             $table->char('cod',7)->unique();
-            $table->string('calificacion')->unique();
+            $table->string('departamento')->unique();
             $table->timestamps();
 
-            $table->integer('id_users')->nullable();
-            $table->foreign('id_users')->references('id')->on('users');
+
         });
     }
 
@@ -31,6 +30,6 @@ class CreateCalificacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calificacions');
+        Schema::dropIfExists('departamentos');
     }
 }

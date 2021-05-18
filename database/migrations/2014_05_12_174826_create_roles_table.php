@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTiporequerimientosTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateTiporequerimientosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tiporequerimientos', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('cod',7)->unique();
-            $table->string('sub_categoria');
+            $table->char('cod')->unique();
+            $table->string('rol')->unique();
             $table->timestamps();
-
-            $table->integer('id_categorias');
-            $table->foreign('id_categorias')->references('id')->on('categorias');
         });
     }
 
@@ -31,6 +28,6 @@ class CreateTiporequerimientosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tiporequerimientos');
+        Schema::dropIfExists('roles');
     }
 }

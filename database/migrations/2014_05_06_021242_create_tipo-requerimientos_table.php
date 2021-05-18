@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEstadosTable extends Migration
+class CreateTiporequerimientosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateEstadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('estados', function (Blueprint $table) {
+        Schema::create('tipo-requerimientos', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('cod',7);
-            $table->string('estado')->unique();
+            $table->char('cod',7)->unique();
+            $table->string('tipo_requerimiento')->unique();
             $table->timestamps();
+
+            $table->integer('id_categoria');
+            $table->foreign('id_categoria')->references('id')->on('categorias');
         });
     }
 
@@ -28,6 +31,6 @@ class CreateEstadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estados');
+        Schema::dropIfExists('tiporequerimientos');
     }
 }

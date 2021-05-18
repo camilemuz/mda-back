@@ -14,9 +14,9 @@ class RequerimientoController extends Controller
      */
     public function index()
     {
-        $requerimientos = Requerimiento::all();
+        $requerimiento = Requerimiento::all();
         //return 'holll';
-        return response()->json(['data' => $requerimientos], 200);
+        return response()->json(['data' => $requerimiento], 200);
     }
 
 
