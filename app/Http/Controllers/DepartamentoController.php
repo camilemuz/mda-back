@@ -30,13 +30,13 @@ class DepartamentoController extends Controller
     {
         $this->validate($request, [
             'cod' => ['required'],
-            'nombre_departamento' => ['required'],
+            'departamento' => ['required'],
            /* 'id_dptosucur' => ['required'],*/
 
         ]);
         $departamento = new Departamento();
         $departamento->cod = $request->cod;
-        $departamento->nombre_departamento = $request->nombre_departamento;
+        $departamento->departamento = $request->departamento;
         /*$departamento->id_dptosucur = $request->id_dptosucur;*/
         $departamento->save();
 
@@ -66,14 +66,14 @@ class DepartamentoController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'cod' => ['required'],
-            'nombre_departamento' => [],
+            'cod' => [],
+            'departamento' => [],
            /* 'id_dptosucur' => [],*/
 
         ]);
         $departamento = Departamento::findOrFail($id);
         $departamento->cod = $request->input('cod');
-        $departamento->nombre_departamento = $request->input('nombre_departamento');
+        $departamento->departamento = $request->input('departamento');
         /*$departamento->id_dptosucur = $request->input('id_dptosucur');*/
         $departamento->save();
 

@@ -30,13 +30,13 @@ class SucursalController extends Controller
     {
         $this->validate($request, [
             'cod' => ['required'],
-            'nombre_sucursal' => ['required'],
+            'sucursal' => ['required'],
             'id_municipio' => ['required'],
 
         ]);
         $sucursal = new Sucursal();
         $sucursal->cod= $request->cod;
-        $sucursal->nombre_sucursal = $request->nombre_sucursal;
+        $sucursal->sucursal = $request->sucursal;
         $sucursal->id_municipio = $request->id_municipio;
         $sucursal->save();
 
@@ -67,13 +67,13 @@ class SucursalController extends Controller
     {
         $this->validate($request, [
             'cod' => [],
-            'nombre_sucursal' => [],
+            'sucursal' => [],
             'id_municipio' => [],
 
         ]);
         $sucursal = Sucursal::findOrFail($id);
         $sucursal->cod = $request->input('cod');
-        $sucursal->nombre_sucursal = $request->input('nombre_sucursal');
+        $sucursal->sucursal = $request->input('sucursal');
         $sucursal->id_municipio = $request->input('id_municipio');
         $sucursal->save();
 

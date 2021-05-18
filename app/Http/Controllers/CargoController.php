@@ -32,11 +32,13 @@ class CargoController extends Controller
         $this->validate($request, [
             'cod' => ['required'],
             'cargo' => ['required'],
+            'id_prioridad' => ['required']
 
         ]);
         $cargo = new Cargo();
         $cargo->cod = $request->cod;
         $cargo->cargo=$request->cargo;
+        $cargo->id_prioridad=$request->id_prioridad;
         $cargo->save();
 
         return response()->json(['data' => $cargo], 201);
@@ -66,11 +68,13 @@ class CargoController extends Controller
         $this->validate($request, [
             'cod' => [],
             'cargo' => [],
+            'id_prioridad' => [],
 
         ]);
         $cargo = Cargo::findOrFail($id);
         $cargo->cod = $request->input('cod');
         $cargo->cargo = $request->input('cargo');
+        $cargo->id_prioridad = $request->input('id_prioridad');
 
 
         $cargo->save();

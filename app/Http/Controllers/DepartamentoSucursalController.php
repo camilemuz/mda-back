@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Calificacion;
+use App\Models\dptosucursal;
 use Illuminate\Http\Request;
 
-class CalificacionController extends Controller
+class DepartamentoSucursalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class CalificacionController extends Controller
      */
     public function index()
     {
-        $calificaiones = Calificacion::all();
-
-        return response()->json(['data' => $calificaiones], 200);
+        $DptoSucursles = dptosucursal::all();
+        //return 'holll';
+        return response()->json(['data' => $DptoSucursles], 200);
     }
 
 
@@ -29,17 +29,16 @@ class CalificacionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'cod' => ['required'],
-            'calificacion' => ['required'],
+            'id_sucursal' => ['required'],
+            'id_dpto' => ['required'],
 
         ]);
-        $calificacion = new Calificacion();
-        $calificacion->cod = $request->cod;
-        $calificacion->calificacion = $request->calificacion;
+        $dptoSucural = new dptosucursal();
+        $dptoSucural->id_sucursal = $request->id_sucursal;
+        $dptoSucural->id_dpto = $request->id_dpto;
+        $dptoSucural->save();
 
-        $calificacion->save();
-
-        return response()->json(['data' => $calificacion], 201);
+        return response()->json(['data' => $dptoSucural], 201);
     }
 
     /**
@@ -50,7 +49,7 @@ class CalificacionController extends Controller
      */
     public function show($id)
     {
-        return response()->json(['data' => Calificacion::findOrFail($id)],200);
+        return response()->json(['data' => dptosucursal::findOrFail($id)],200);
     }
 
 
@@ -65,16 +64,18 @@ class CalificacionController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'cod' => [],
-            'calificación' => [],
+            'id_sucursal' => [],
+            'id_dpto' => [],
 
         ]);
-        $calificacion = Calificacion::findOrFail($id);
-        $calificacion->cod = $request->input('cod');
-        $calificacion->calificacion = $request->input('calificacion');
-        $calificacion->save();
+        $dptoSucural = dptosucursal::findOrFail($id);
+        $dptoSucural->id_sucursal = $request->input('id_sucursal');
+        $dptoSucural->id_dpto = $request->input('id_dpto');
 
-        return response()->json(['data' => $calificacion], 201);
+
+        $dptoSucural->save();
+
+        return response()->json(['data' => $dptoSucural], 201);
     }
 
     /**
@@ -85,9 +86,9 @@ class CalificacionController extends Controller
      */
     public function destroy($id)
     {
-        $calificacion = Calificacion::findOrFail($id);
-        $calificacion->delete();
+        $dptoSucural = dptosucursal::findOrFail($id);
+        $dptoSucural->delete();
 
-        return response()->json(['data' => $calificacion], 201);
+        return response()->json(['data' => $dptoSucural], 201);
     }
 }

@@ -30,12 +30,12 @@ class MunicipioController extends Controller
     {
         $this->validate($request, [
             'cod' => ['required'],
-            'nombre_municipio' => ['required'],
+            'municipio' => ['required'],
 
         ]);
         $municipio = new Municipio();
         $municipio->cod = $request->id;
-        $municipio->nombre_municipio=$request->nombre_municipio;
+        $municipio->municipio=$request->municipio;
         $municipio->save();
 
         return response()->json(['data' => $municipio], 201);
@@ -65,12 +65,12 @@ class MunicipioController extends Controller
     {
         $this->validate($request, [
             'cod' => [],
-            'nombre_municipio' => [],
+            'municipio' => [],
 
         ]);
         $municipio = Municipio::findOrFail($id);
         $municipio->cod = $request->input('cod');
-        $municipio->nombre_municipio = $request->input('nombre_municipio');
+        $municipio->nombre_municipio = $request->input('municipio');
 
 
         $municipio->save();

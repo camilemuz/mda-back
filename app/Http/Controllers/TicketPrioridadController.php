@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Calificacion;
+use App\Models\TicketPrioridad;
 use Illuminate\Http\Request;
 
-class CalificacionController extends Controller
+class TicketPrioridadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class CalificacionController extends Controller
      */
     public function index()
     {
-        $calificaiones = Calificacion::all();
+        $TicketPrioridades = TicketPrioridad::all();
 
-        return response()->json(['data' => $calificaiones], 200);
+        return response()->json(['data' => $TicketPrioridades], 200);
     }
 
 
@@ -29,17 +29,17 @@ class CalificacionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'cod' => ['required'],
-            'calificacion' => ['required'],
+            'id_ticket' => [],
+            'id_prioridad' => [],
 
         ]);
-        $calificacion = new Calificacion();
-        $calificacion->cod = $request->cod;
-        $calificacion->calificacion = $request->calificacion;
+        $TicketPrioridad = new TicketPrioridad();
+        $TicketPrioridad->id_ticket = $request->id_ticket;
+        $TicketPrioridad->id_prioridad = $request->id_prioridad;
 
-        $calificacion->save();
+        $TicketPrioridad->save();
 
-        return response()->json(['data' => $calificacion], 201);
+        return response()->json(['data' => $TicketPrioridad], 201);
     }
 
     /**
@@ -50,7 +50,7 @@ class CalificacionController extends Controller
      */
     public function show($id)
     {
-        return response()->json(['data' => Calificacion::findOrFail($id)],200);
+        return response()->json(['data' => TicketPrioridad::findOrFail($id)],200);
     }
 
 
@@ -65,16 +65,16 @@ class CalificacionController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'cod' => [],
-            'calificación' => [],
+            'id_ticket' => [],
+            'id_prioridad' => [],
 
         ]);
-        $calificacion = Calificacion::findOrFail($id);
-        $calificacion->cod = $request->input('cod');
-        $calificacion->calificacion = $request->input('calificacion');
-        $calificacion->save();
+        $TicketPrioridad = TicketPrioridad::findOrFail($id);
+        $TicketPrioridad->id_ticket = $request->input('id_ticket');
+        $TicketPrioridad->id_prioridad = $request->input('id_prioridad');
+        $TicketPrioridad->save();
 
-        return response()->json(['data' => $calificacion], 201);
+        return response()->json(['data' => $TicketPrioridad], 201);
     }
 
     /**
@@ -85,9 +85,9 @@ class CalificacionController extends Controller
      */
     public function destroy($id)
     {
-        $calificacion = Calificacion::findOrFail($id);
-        $calificacion->delete();
+        $TicketPrioridad = TicketPrioridad::findOrFail($id);
+        $TicketPrioridad->delete();
 
-        return response()->json(['data' => $calificacion], 201);
+        return response()->json(['data' => $TicketPrioridad], 201);
     }
 }
