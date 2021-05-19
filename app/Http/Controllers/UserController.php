@@ -33,11 +33,13 @@ class  UserController extends Controller
             'nombre' => ['required'],
             'ap_paterno' => ['required'],
             'ap_materno' => [],
-            'id_cargo' => [],
-            'unidad' => [],
             'email' => ['required', 'email:rfc,dns', 'unique:users,email'],
             'password' => ['required', 'min:8'],
-            'rol' => ['required'],
+            'division' => [],
+            'id_cargo' => [],
+            'id_rol' => [],
+
+
 
 
         ]);
@@ -45,10 +47,13 @@ class  UserController extends Controller
         $user->nombre = $request->nombre;
         $user->ap_paterno = $request->ap_paterno;
         $user->ap_materno = $request->ap_materno;
-        $user->id_cargo = $request->id_cargo;
-        $user->unidad = $request->unidad;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->division = $request->division;
+        $user->id_cargo = $request->id_cargo;
+        $user->id_rol = $request->id_rol;
+
+
         $user->rol = $request->rol;
 
         $user->save();
@@ -82,24 +87,21 @@ class  UserController extends Controller
             'nombre' => ['required'],
             'ap_paterno' => ['required'],
             'ap_materno' => [],
-
-            //'email' => ['required', "unique:users,email,{$id},id"],
-           // 'password' => ['required', 'min:8'],
-
-            'rol' => [],
-            'id_cargo'=>[],
-            'unidad' => [],
-
+            'email' => ['required'],
+            'password' => ['required', 'min:8'],
+            'division' => [],
+            'id_cargo' => [],
+            'id_rol' => [],
         ]);
         $user = User::findOrFail($id);
         $user->nombre = $request->input('nombre');
         $user->ap_paterno = $request->input('ap_paterno');
         $user->ap_materno = $request->input('ap_materno');
-        //$user->email = $request->input('email');
-        //$user->password = $request->input('password');
-        $user->rol = $request->input('rol');
+        $user->email = $request->input('email');
+        $user->password = $request->input('password');
+        $user->division = $request->input('division');
         $user->id_cargo = $request->input('id_cargo');
-        $user->unidad = $request->input('unidad');
+        $user->id_rol = $request->input('id_rol');
         $user->save();
 
         return response()->json(['data' => $user], 201);

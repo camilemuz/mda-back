@@ -24,7 +24,7 @@ class User extends Authenticatable
         'ap_materno',
         'rol',
         'cargo',
-        'unidad',
+        'division',
         'email',
         'password',
     ];

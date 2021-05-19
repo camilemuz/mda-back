@@ -16,13 +16,26 @@ class RequerimientosTableSeeder extends Seeder
     {
         DB::table( 'requerimientos' )->insert([
             'descripcion'=>'Computadora con virus',
-            'id_users'=>'2',
-            'id_tiporeq'=>'1',
-            'id_calificacion'=>'5',
-            'id_prioridad'=>'1',
+            'interno'=>'1045',
+            'id_users'=>'1',
+            'id_tiporeq'=>'5',
             'id_departamento'=>'2',
-            'id_estado'=>'1',
-            'fecha_atencion'=>'2021-05-15 02:08:43'
+
+        ]);
+        DB::table( 'requerimientos' )->insert([
+            'descripcion'=>'Impresora impreme con manchas',
+            'interno'=>'1321',
+            'id_users'=>'2',
+            'id_tiporeq'=>'9',
+            'id_departamento'=>'3',
+
+        ]);
+        DB::table( 'requerimientos' )->insert([
+            'descripcion'=>'El interno no tiene línea',
+            'interno'=>'1323',
+            'id_users'=>'1',
+            'id_tiporeq'=>'12',
+            'id_departamento'=>'2',
 
         ]);
     }
