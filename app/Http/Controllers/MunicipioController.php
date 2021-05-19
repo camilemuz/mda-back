@@ -70,7 +70,7 @@ class MunicipioController extends Controller
         ]);
         $municipio = Municipio::findOrFail($id);
         $municipio->cod = $request->input('cod');
-        $municipio->nombre_municipio = $request->input('municipio');
+        $municipio->municipio = $request->input('municipio');
 
 
         $municipio->save();
