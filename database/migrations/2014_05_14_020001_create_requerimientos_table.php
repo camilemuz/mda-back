@@ -24,7 +24,7 @@ class CreateRequerimientosTable extends Migration
             $table->foreign('id_users')->references('id')->on('users');
 
             $table->integer('id_tiporeq');
-            $table->foreign('id_tiporeq')->references('id')->on('tipo-requerimientos');
+            $table->foreign('id_tiporeq')->references('id')->on('tiporequerimientos');
 
             $table->integer('id_departamento');
             $table->foreign('id_departamento')->references('id')->on('departamentos');

@@ -27,14 +27,16 @@ Route::post('req', [\App\Http\Controllers\RequerimientoController::class, 'store
 Route::put('req', [\App\Http\Controllers\RequerimientoController::class, 'update']);
 Route::put('req', [\App\Http\Controllers\RequerimientoController::class, 'update']);*/
 
-Route::resource('q', \App\Http\Controllers\CalificacionController::class);
+Route::middleware('auth:sanctum')->resource('municipio', \App\Http\Controllers\MunicipioController::class);
+
+/*Route::resource('q', \App\Http\Controllers\CalificacionController::class);*/
 Route::resource('ticket', \App\Http\Controllers\TicketController::class);
 Route::resource('estado', \App\Http\Controllers\EstadoController::class);
 Route::resource('prioridad', \App\Http\Controllers\PrioridadController::class);
 Route::resource('tickPrio', \App\Http\Controllers\TicketPrioridadController::class);
 Route::resource('cat', \App\Http\Controllers\CategoriaController::class);
 Route::resource('tipo', \App\Http\Controllers\TiporequerimientoController::class);
-Route::resource('municipio', \App\Http\Controllers\MunicipioController::class);
+/*Route::resource('municipio', \App\Http\Controllers\MunicipioController::class);*/
 Route::resource('sucursal', \App\Http\Controllers\SucursalController::class);
 Route::resource('dpto', \App\Http\Controllers\DepartamentoController::class);
 Route::resource('dptoSuc', \App\Http\Controllers\DepartamentoSucursalController::class);

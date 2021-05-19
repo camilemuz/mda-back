@@ -14,344 +14,344 @@ class TiporequerimientosTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA1',
-            'tipo_requerimiento'=>'El equipo No inicia',
+            'tiporeq'=>'El equipo No inicia',
             'id_categoria'=>'1'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA2',
-            'tipo_requerimiento'=>'Se reinicia',
+            'tiporeq'=>'Se reinicia',
             'id_categoria'=>'1'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA3',
-            'tipo_requerimiento'=>'Configuración',
+            'tiporeq'=>'Configuración',
             'id_categoria'=>'1'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA4',
-            'tipo_requerimiento'=>'Mensaje de error',
+            'tiporeq'=>'Mensaje de error',
             'id_categoria'=>'1'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA5',
-            'tipo_requerimiento'=>'Virus',
+            'tiporeq'=>'Virus',
             'id_categoria'=>'1'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA6',
-            'tipo_requerimiento'=>'Bloqueo/lentitud',
+            'tiporeq'=>'Bloqueo/lentitud',
             'id_categoria'=>'1'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA7',
-            'tipo_requerimiento'=>'Archivos perdidos',
+            'tiporeq'=>'Archivos perdidos',
             'id_categoria'=>'1'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA8',
-            'tipo_requerimiento'=>'Conexión a la RED',
+            'tiporeq'=>'Conexión a la RED',
             'id_categoria'=>'1'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA9',
-            'tipo_requerimiento'=>'Impresora',
+            'tiporeq'=>'Impresora',
             'id_categoria'=>'1'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA10',
-            'tipo_requerimiento'=>'Internet',
+            'tiporeq'=>'Internet',
             'id_categoria'=>'1'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA11',
-            'tipo_requerimiento'=>'Correo',
+            'tiporeq'=>'Correo',
             'id_categoria'=>'1'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA12',
-            'tipo_requerimiento'=>'Interno',
+            'tiporeq'=>'Interno',
             'id_categoria'=>'1'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA13',
-            'tipo_requerimiento'=>'Biométrico',
+            'tiporeq'=>'Biométrico',
             'id_categoria'=>'1'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TA14',
-            'tipo_requerimiento'=>'Otro',
+            'tiporeq'=>'Otro',
             'id_categoria'=>'1'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TM1',
-            'tipo_requerimiento'=>'Computadora',
+            'tiporeq'=>'Computadora',
             'id_categoria'=>'2'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TM2',
-            'tipo_requerimiento'=>'Impresora',
+            'tiporeq'=>'Impresora',
             'id_categoria'=>'2'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TM3',
-            'tipo_requerimiento'=>'Scanner',
+            'tiporeq'=>'Scanner',
             'id_categoria'=>'2'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TM4',
-            'tipo_requerimiento'=>'Teclado',
+            'tiporeq'=>'Teclado',
             'id_categoria'=>'2'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TM5',
-            'tipo_requerimiento'=>'Mouse',
+            'tiporeq'=>'Mouse',
             'id_categoria'=>'2'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TM6',
-            'tipo_requerimiento'=>'Monitor',
+            'tiporeq'=>'Monitor',
             'id_categoria'=>'2'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TM7',
-            'tipo_requerimiento'=>'Unidad CD/DVD',
+            'tiporeq'=>'Unidad CD/DVD',
             'id_categoria'=>'2'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TM8',
-            'tipo_requerimiento'=>'Unidad CD/DVD',
+            'tiporeq'=>'Unidad CD/DVD',
             'id_categoria'=>'2'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TM9',
-            'tipo_requerimiento'=>'POS',
+            'tiporeq'=>'POS',
             'id_categoria'=>'2'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TM10',
-            'tipo_requerimiento'=>'Sonido',
+            'tiporeq'=>'Sonido',
             'id_categoria'=>'2'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TM11',
-            'tipo_requerimiento'=>'Impresora Termica',
+            'tiporeq'=>'Impresora Termica',
             'id_categoria'=>'2'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TM12',
-            'tipo_requerimiento'=>'Otros',
+            'tiporeq'=>'Otros',
             'id_categoria'=>'2'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TI1',
-            'tipo_requerimiento'=>'Todo (Completo)',
+            'tiporeq'=>'Todo (Completo)',
             'id_categoria'=>'3'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TI2',
-            'tipo_requerimiento'=>'Sistema Operativo',
+            'tiporeq'=>'Sistema Operativo',
             'id_categoria'=>'3'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TI3',
-            'tipo_requerimiento'=>'Drivers',
+            'tiporeq'=>'Drivers',
             'id_categoria'=>'3'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TI4',
-            'tipo_requerimiento'=>'Lector de PDF',
+            'tiporeq'=>'Lector de PDF',
             'id_categoria'=>'3'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TI5',
-            'tipo_requerimiento'=>'Quemador CD/DVD',
+            'tiporeq'=>'Quemador CD/DVD',
             'id_categoria'=>'3'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TI6',
-            'tipo_requerimiento'=>'Office',
+            'tiporeq'=>'Office',
             'id_categoria'=>'3'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TI7',
-            'tipo_requerimiento'=>'Genesys',
+            'tiporeq'=>'Genesys',
             'id_categoria'=>'3'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TI8',
-            'tipo_requerimiento'=>'SAR',
+            'tiporeq'=>'SAR',
             'id_categoria'=>'3'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TI9',
-            'tipo_requerimiento'=>'SAP',
+            'tiporeq'=>'SAP',
             'id_categoria'=>'3'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TI10',
-            'tipo_requerimiento'=>'Cronos',
+            'tiporeq'=>'Cronos',
             'id_categoria'=>'3'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TI11',
-            'tipo_requerimiento'=>'Otros',
+            'tiporeq'=>'Otros',
             'id_categoria'=>'3'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TC1',
-            'tipo_requerimiento'=>'Medio Físico (DVD/USB)',
+            'tiporeq'=>'Medio Físico (DVD/USB)',
             'id_categoria'=>'4'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TC2',
-            'tipo_requerimiento'=>'Otro Computador',
+            'tiporeq'=>'Otro Computador',
             'id_categoria'=>'4'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TC3',
-            'tipo_requerimiento'=>'Documentos',
+            'tiporeq'=>'Documentos',
             'id_categoria'=>'4'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TC4',
-            'tipo_requerimiento'=>'Correo',
+            'tiporeq'=>'Correo',
             'id_categoria'=>'4'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TC5',
-            'tipo_requerimiento'=>'Otro',
+            'tiporeq'=>'Otro',
             'id_categoria'=>'4'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TS1',
-            'tipo_requerimiento'=>'Soporte GENESYS',
+            'tiporeq'=>'Soporte GENESYS',
             'id_categoria'=>'5'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TS2',
-            'tipo_requerimiento'=>'Reportes/Listados GENESYS',
+            'tiporeq'=>'Reportes/Listados GENESYS',
             'id_categoria'=>'5'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TS3',
-            'tipo_requerimiento'=>'Soporte SAP',
+            'tiporeq'=>'Soporte SAP',
             'id_categoria'=>'5'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TS4',
-            'tipo_requerimiento'=>'Reportes/Listados SAP',
+            'tiporeq'=>'Reportes/Listados SAP',
             'id_categoria'=>'5'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TS5',
-            'tipo_requerimiento'=>'Soporte SAR',
+            'tiporeq'=>'Soporte SAR',
             'id_categoria'=>'5'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TS6',
-            'tipo_requerimiento'=>'Reportes/Listados SAR',
+            'tiporeq'=>'Reportes/Listados SAR',
             'id_categoria'=>'2'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TS7',
-            'tipo_requerimiento'=>'Soporte Otros',
+            'tiporeq'=>'Soporte Otros',
             'id_categoria'=>'5'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TS8',
-            'tipo_requerimiento'=>'Reportes/Listados Otros',
+            'tiporeq'=>'Reportes/Listados Otros',
             'id_categoria'=>'5'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TS9',
-            'tipo_requerimiento'=>'Sistema Laboratorio',
+            'tiporeq'=>'Sistema Laboratorio',
             'id_categoria'=>'5'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TS10',
-            'tipo_requerimiento'=>'SIDOT',
+            'tiporeq'=>'SIDOT',
             'id_categoria'=>'5'
 
         ]);
 
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TS11',
-            'tipo_requerimiento'=>'Local',
+            'tiporeq'=>'Local',
             'id_categoria'=>'5'
 
         ]);
-        DB::table( 'tipo-requerimientos' )->insert([
+        DB::table( 'tiporequerimientos' )->insert([
             'cod'=>'TS12',
-            'tipo_requerimiento'=>'Pistón',
+            'tiporeq'=>'Pistón',
             'id_categoria'=>'5'
 
         ]);

@@ -30,14 +30,14 @@ class TipoRequerimientoController extends Controller
     {
         $this->validate($request, [
             'cod' => ['required'],
-            'tipo_requerimiento' => ['required'],
+            'tiporeq' => ['required'],
             'id_categoria' => ['required'],
 
         ]);
         $tiporequerimiento = new Tiporequerimiento();
         $tiporequerimiento->cod= $request->cod;
-        $tiporequerimiento->tipo_requerimiento = $request->tipo_requerimiento;
-        $tiporequerimiento->id_categoria = $request->id_categorias;
+        $tiporequerimiento->tiporeq = $request->tiporeq;
+        $tiporequerimiento->id_categoria = $request->id_categoria;
         $tiporequerimiento->save();
 
         return response()->json(['data' => $tiporequerimiento], 201);
@@ -67,13 +67,13 @@ class TipoRequerimientoController extends Controller
     {
         $this->validate($request, [
             'cod' => [],
-            'tipo_requerimiento' => [],
+            'tiporeq' => [],
             'id_categoria' => [],
 
         ]);
         $tiporequerimiento = Tiporequerimiento::findOrFail($id);
         $tiporequerimiento->cod = $request->input('cod');
-        $tiporequerimiento->tipo_requerimiento = $request->input('tipo_requerimiento');
+        $tiporequerimiento->tiporeq = $request->input('tiporeq');
         $tiporequerimiento->id_categoria = $request->input('id_categoria');
         $tiporequerimiento->save();
 

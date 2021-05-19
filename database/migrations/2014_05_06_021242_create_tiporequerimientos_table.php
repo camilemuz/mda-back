@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoRequerimientosTable extends Migration
+class CreateTiporequerimientosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTipoRequerimientosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo-requerimientos', function (Blueprint $table) {
+        Schema::create('tiporequerimientos', function (Blueprint $table) {
             $table->increments('id');
             $table->char('cod',7)->unique();
-            $table->string('tipo_requerimiento');
+            $table->string('tiporeq');
             $table->timestamps();
 
             $table->integer('id_categoria');
