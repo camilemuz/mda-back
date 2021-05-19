@@ -34,7 +34,7 @@ class MunicipioController extends Controller
 
         ]);
         $municipio = new Municipio();
-        $municipio->cod = $request->id;
+        $municipio->cod = $request->cod;
         $municipio->municipio=$request->municipio;
         $municipio->save();
 

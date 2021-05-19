@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tiporequerimiento;
 use Illuminate\Http\Request;
 
-class TiporequerimientoController extends Controller
+class TipoRequerimientoController extends Controller
 {
     /**
      * Display a listing of the resource.
