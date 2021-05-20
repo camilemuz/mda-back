@@ -19,8 +19,7 @@ class CreateCargosTable extends Migration
             $table->string('cargo')->unique();
             $table->timestamps();
 
-            $table->integer('id_prioridad');
-            $table->foreign('id_prioridad')->references('id')->on('prioridads');
+
         });
     }
 

@@ -33,7 +33,6 @@ Route::middleware('auth:sanctum')->resource('municipio', \App\Http\Controllers\M
 Route::resource('ticket', \App\Http\Controllers\TicketController::class);
 Route::resource('estado', \App\Http\Controllers\EstadoController::class);
 Route::resource('prioridad', \App\Http\Controllers\PrioridadController::class);
-Route::resource('tickPrio', \App\Http\Controllers\TicketPrioridadController::class);
 Route::resource('cat', \App\Http\Controllers\CategoriaController::class);
 Route::resource('tipo', \App\Http\Controllers\TiporequerimientoController::class);
 /*Route::resource('municipio', \App\Http\Controllers\MunicipioController::class);*/
@@ -44,8 +43,7 @@ Route::resource('cargo', \App\Http\Controllers\CargoController::class);
 Route::resource('rol', \App\Http\Controllers\RoleController::class);
 Route::resource('user', \App\Http\Controllers\UserController::class);
 Route::resource('req', \App\Http\Controllers\RequerimientoController::class);
-Route::resource('reqTick', \App\Http\Controllers\ReqTicketController::class);
-Route::resource('estTick', \App\Http\Controllers\EstadoTicketController::class);
+
 Route::resource('calTickUser', \App\Http\Controllers\CalificacionTicketUsuarioController::class);
 
 

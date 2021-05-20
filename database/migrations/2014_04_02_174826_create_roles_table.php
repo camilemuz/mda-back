@@ -15,9 +15,12 @@ class CreateRolesTable extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('cod')->unique();
+            $table->char('cod',7)->unique();
             $table->string('rol')->unique();
             $table->timestamps();
+
+            $table->integer('id_division');
+            $table->foreign('id_division')->references('id')->on('divisions');
         });
     }
 

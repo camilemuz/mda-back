@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('ap_materno')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('division');
             $table->boolean('estado')->default(1);
             $table->timestamps();
 

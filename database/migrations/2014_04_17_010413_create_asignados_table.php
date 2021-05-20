@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTicketPrioridadsTable extends Migration
+class CreateAsignadosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateTicketPrioridadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ticket-prioridads', function (Blueprint $table) {
-            $table->id();
+        Schema::create('asignados', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('asignado');
             $table->timestamps();
 
-            $table->integer('id_ticket')->nullable();
+            $table->integer('id_ticket');
             $table->foreign('id_ticket')->references('id')->on('tickets');
 
-            $table->integer('id_prioridad')->nullable();
-            $table->foreign('id_prioridad')->references('id')->on('prioridads');
+            $table->integer('id_user');
+            $table->foreign('id_user')->references('id')->on('users');
 
         });
     }
@@ -33,6 +34,6 @@ class CreateTicketPrioridadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ticket-prioridads');
+        Schema::dropIfExists('asignados');
     }
 }
