@@ -35,7 +35,6 @@ class  UserController extends Controller
             'ap_materno' => [],
             'email' => ['required', 'email:rfc,dns', 'unique:users,email'],
             'password' => ['required', 'min:8'],
-            'division' => [],
             'id_cargo' => [],
             'id_rol' => [],
 
@@ -49,12 +48,11 @@ class  UserController extends Controller
         $user->ap_materno = $request->ap_materno;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->division = $request->division;
         $user->id_cargo = $request->id_cargo;
         $user->id_rol = $request->id_rol;
 
 
-        $user->rol = $request->rol;
+
 
         $user->save();
 
@@ -87,9 +85,8 @@ class  UserController extends Controller
             'nombre' => ['required'],
             'ap_paterno' => ['required'],
             'ap_materno' => [],
-            'email' => ['required'],
-            'password' => ['required', 'min:8'],
-            'division' => [],
+           /* 'email' => ['required'],
+            'password' => ['required', 'min:8'],*/
             'id_cargo' => [],
             'id_rol' => [],
         ]);
@@ -97,9 +94,8 @@ class  UserController extends Controller
         $user->nombre = $request->input('nombre');
         $user->ap_paterno = $request->input('ap_paterno');
         $user->ap_materno = $request->input('ap_materno');
-        $user->email = $request->input('email');
-        $user->password = $request->input('password');
-        $user->division = $request->input('division');
+        /*$user->email = $request->input('email');
+        $user->password = $request->input('password');*/
         $user->id_cargo = $request->input('id_cargo');
         $user->id_rol = $request->input('id_rol');
         $user->save();

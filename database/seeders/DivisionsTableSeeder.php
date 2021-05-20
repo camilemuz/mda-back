@@ -16,33 +16,35 @@ class DivisionsTableSeeder extends Seeder
     {
         DB::table( 'divisions' )->insert([
             'cod'=>'D1',
-            'division'=>'Gerente',
+            'division'=>'Tecnología',
 
         ]);
         DB::table( 'divisions' )->insert([
             'cod'=>'D2',
-            'division'=>'Jefatura de Departamento',
+            'division'=>'Seguridad Informática',
 
         ]);
         DB::table( 'divisions' )->insert([
             'cod'=>'D3',
-            'division'=>'Jefatura de División',
+            'division'=>'Aplicaciones Administrativas',
 
         ]);
         DB::table( 'divisions' )->insert([
             'cod'=>'D4',
-            'division'=>'Supervisor',
+            'division'=>'Producción y Control',
 
         ]);
         DB::table( 'divisions' )->insert([
             'cod'=>'D5',
-            'division'=>'Oficial',
+            'division'=>'Desarrollo',
 
         ]);
         DB::table( 'divisions' )->insert([
             'cod'=>'D6',
-            'division'=>'Ayudante',
+            'division'=>'Otro',
 
         ]);
+
+
     }
 }

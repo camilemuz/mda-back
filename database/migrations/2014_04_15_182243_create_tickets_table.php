@@ -19,8 +19,6 @@ class CreateTicketsTable extends Migration
             $table->char('comentarios');
             $table->timestamps();
 
-            $table->integer('id_prioridad');
-            $table->foreign('id_prioridad')->references('id')->on('prioridads');
 
             $table->integer('id_estado');
             $table->foreign('id_estado')->references('id')->on('estados');
