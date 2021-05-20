@@ -91,4 +91,7 @@ class MunicipioController extends Controller
 
         return response()->json(['data' => $municipio], 201);
     }
+
+
+
 }

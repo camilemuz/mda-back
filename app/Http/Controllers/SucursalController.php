@@ -93,4 +93,11 @@ class SucursalController extends Controller
 
         return response()->json(['data' => $sucursal], 201);
     }
+
+    public function filtro($id){
+        $sucursal = Sucursal::join("sucursals","sucursals.id_municipio","=","municipios.id")
+
+            ->get();
+        return response()->json(['data' => $sucursal], 201);
+    }
 }

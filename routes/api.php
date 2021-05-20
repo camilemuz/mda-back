@@ -28,26 +28,17 @@ Route::put('req', [\App\Http\Controllers\RequerimientoController::class, 'update
 Route::put('req', [\App\Http\Controllers\RequerimientoController::class, 'update']);*/
 
 Route::middleware('auth:sanctum')->resource('municipio', \App\Http\Controllers\MunicipioController::class);
-
-/*Route::resource('q', \App\Http\Controllers\CalificacionController::class);*/
-Route::resource('ticket', \App\Http\Controllers\TicketController::class);
-Route::resource('estado', \App\Http\Controllers\EstadoController::class);
-Route::resource('prioridad', \App\Http\Controllers\PrioridadController::class);
-Route::resource('cat', \App\Http\Controllers\CategoriaController::class);
-Route::resource('tipo', \App\Http\Controllers\TiporequerimientoController::class);
-/*Route::resource('municipio', \App\Http\Controllers\MunicipioController::class);*/
-Route::resource('sucursal', \App\Http\Controllers\SucursalController::class);
-Route::resource('dpto', \App\Http\Controllers\DepartamentoController::class);
-Route::resource('dptoSuc', \App\Http\Controllers\DepartamentoSucursalController::class);
-Route::resource('cargo', \App\Http\Controllers\CargoController::class);
-Route::resource('rol', \App\Http\Controllers\RoleController::class);
-Route::resource('user', \App\Http\Controllers\UserController::class);
-Route::resource('req', \App\Http\Controllers\RequerimientoController::class);
-
-Route::resource('calTickUser', \App\Http\Controllers\CalificacionTicketUsuarioController::class);
-
-
-
-
-
+Route::middleware('auth:sanctum')->resource('q', \App\Http\Controllers\CalificacionController::class);
+Route::middleware('auth:sanctum')->resource('ticket', \App\Http\Controllers\TicketController::class);
+Route::middleware('auth:sanctum')->resource('estado', \App\Http\Controllers\EstadoController::class);
+Route::middleware('auth:sanctum')->resource('prioridad', \App\Http\Controllers\PrioridadController::class);
+Route::middleware('auth:sanctum')->resource('cat', \App\Http\Controllers\CategoriaController::class);
+Route::middleware('auth:sanctum')->resource('tipo', \App\Http\Controllers\TiporequerimientoController::class);
+Route::middleware('auth:sanctum')->resource('sucursal', \App\Http\Controllers\SucursalController::class);
+Route::middleware('auth:sanctum')->resource('dpto', \App\Http\Controllers\DepartamentoController::class);
+Route::middleware('auth:sanctum')->resource('dptoSuc', \App\Http\Controllers\DepartamentoSucursalController::class);
+Route::middleware('auth:sanctum')->resource('cargo', \App\Http\Controllers\CargoController::class);
+Route::middleware('auth:sanctum')->resource('req', \App\Http\Controllers\RequerimientoController::class);
+Route::middleware('auth:sanctum')->resource('calTickUser', \App\Http\Controllers\CalificacionTicketUsuarioController::class);
+/*Route::middlewaremiddleware('auth:sanctum')->resource('user', \App\Http\Controllers\UserController::class);*/
 
