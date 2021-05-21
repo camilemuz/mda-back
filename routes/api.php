@@ -41,4 +41,4 @@ Route::middleware('auth:sanctum')->resource('cargo', \App\Http\Controllers\Cargo
 Route::middleware('auth:sanctum')->resource('req', \App\Http\Controllers\RequerimientoController::class);
 Route::middleware('auth:sanctum')->resource('calTickUser', \App\Http\Controllers\CalificacionTicketUsuarioController::class);
 /*Route::middlewaremiddleware('auth:sanctum')->resource('user', \App\Http\Controllers\UserController::class);*/
-
+Route::middleware('auth:sanctum')->get('filtro/{id}', [\App\Http\Controllers\SucursalController::class, 'filtro']);

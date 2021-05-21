@@ -20,13 +20,11 @@ class Requerimiento extends Model
         'interno',
         'id_users',
         'id_tiporeq',
-        'id_calificacion',
-        'id_prioridad',
-        'id_departamento',
-        'id_estado',
+        'id_dpto',
+
 
     ];
-    protected $table = 'categorias';
+    protected $table = 'requerimientos';
 
     public function user()
     {
@@ -38,24 +36,14 @@ class Requerimiento extends Model
         return $this->belongsTo(Tiporequerimiento::class,'id_tiporeq','id');
     }
 
-    public function calificacion()
-    {
-        return $this->belongsTo(Calificacion::class,'id_calificacion','id');
-    }
-
-    public function prioridad()
-    {
-        return $this->belongsTo(Prioridad::class,'id_prioridad','id');
-    }
 
     public function departamento()
     {
-        return $this->belongsTo(Departamento::class,'id_departamento','id');
+        return $this->belongsTo(Departamento::class,'id_dpto','id');
     }
-
-    public function estado()
+    public function ticket()
     {
-        return $this->belongsTo(Estado::class,'id_estado','id');
+        return $this->hasMany(Ticket::class,'id_ticket','id');
     }
 
 }

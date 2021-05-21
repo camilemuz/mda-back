@@ -53,6 +53,15 @@ class User extends Authenticatable
     }
 
     public function calificacion (){
-        return $this->hasMany(Calificacion::class,'id_calificacion','id' );
+        return $this->hasMany(CalificacionTicketUsuario::class,'id_caltickuser','id' );
+    }
+    public function asignado (){
+        return $this->hasMany(Asignado::class,'id_asignadp','id' );
+    }
+    public function rol (){
+        return $this->belongsTo(Role::class,'id_rol','id' );
+    }
+    public function cargo (){
+        return $this->belongsTo(Cargo::class,'id_cargo','id' );
     }
 }

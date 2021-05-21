@@ -15,12 +15,13 @@ class TipoRequerimientoController extends Controller
     public function index()
     {
         $tiporequerimientos = Tiporequerimiento::all();
-        return response()->json(['data' => $tiporequerimientos], 200);
+       return response()->json(['data' => $tiporequerimientos], 200);
+
     }
 
 
 
-    /**
+    /*
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
