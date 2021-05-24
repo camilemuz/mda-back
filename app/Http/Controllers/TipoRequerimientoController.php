@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sucursal;
 use App\Models\Tiporequerimiento;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,7 @@ class TipoRequerimientoController extends Controller
 
 
 
-    /*
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -93,5 +94,13 @@ class TipoRequerimientoController extends Controller
         $tiporequerimiento->delete();
 
         return response()->json(['data' => $tiporequerimiento], 201);
+    }
+
+    public function filtro ($id)
+    {
+        $tiporequerimiento = Tiporequerimiento::where("id_categoria",$id)->get();
+        return response()->json(['data' => $tiporequerimiento], 201);
+
+
     }
 }
