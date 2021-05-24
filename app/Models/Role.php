@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     use HasFactory;
+
+    protected $table = 'roles';
+
+    protected $primaryKey = 'id';
+
+
+
+
+
+    public function usuario()
+    {
+        return $this->hasMany(User::class, 'id_rol', 'id');
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,7 +15,7 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table( 'roles' )->insert([
+       /* DB::table( 'roles' )->insert([
             'cod'=>'R1',
             'rol'=>'Administrador',
             'id_division'=>'2',
@@ -31,6 +32,20 @@ class RolesTableSeeder extends Seeder
             'rol'=>'Funcionario',
             'id_division'=>'6',
 
-        ]);
+        ]);*/
+
+
+        Role::truncate();
+        $handle = fopen(base_path('storage/data/rol.csv'), "r");
+        while ($csvLine = fgetcsv($handle, 1000, ";")) {
+            Role::create([
+                "cod" => $csvLine[0],
+                "rol" => $csvLine[1],
+                /*"id_division"=>$csvLine[2],*/
+            ]);
+        }
+
+
+
     }
 }

@@ -19,8 +19,7 @@ class CreateRolesTable extends Migration
             $table->string('rol')->unique();
             $table->timestamps();
 
-            $table->integer('id_division');
-            $table->foreign('id_division')->references('id')->on('divisions');
+
         });
     }
 
