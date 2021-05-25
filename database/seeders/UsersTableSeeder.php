@@ -23,7 +23,7 @@ class UsersTableSeeder extends Seeder
             'email'  =>  'prueba@epsas.com' ,
             'password'  =>  Hash::make( '12345678' ),
             'id_cargo'=> '3',
-            'id_rol'=> '3',
+            'id_rol'=> '1',
 
 
 
