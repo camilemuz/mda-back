@@ -26,6 +26,7 @@ class UsersTableSeeder extends Seeder
             'password'  =>  Hash::make( '12345678' )
 
 
+<<<<<<< HEAD
         ]);
 
         DB::table( 'users' )->insert([
@@ -38,6 +39,8 @@ class UsersTableSeeder extends Seeder
             'password'  =>  Hash::make( '12345678' )
 
 
+=======
+>>>>>>> 1b82f9ae6bf3cc6ed549403495b7125d233165cb
         ]);
     }
 }
