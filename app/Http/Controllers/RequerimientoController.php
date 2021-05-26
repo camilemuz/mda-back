@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Requerimiento;
+use App\Models\Ticket;
 use Illuminate\Http\Request;
 
 class RequerimientoController extends Controller
@@ -51,6 +52,26 @@ class RequerimientoController extends Controller
         $requerimiento->save();
 
         return response()->json(['data' => $requerimiento], 201);
+
+        public  function ticket(Request $request){
+
+        $this->validate($request, [
+            'id_req' => [],
+            'numero' => [],
+            'id_estado' => [],
+            'cometnarios' => []
+        ]);
+        $ticket = new Ticket();
+        $ticket->id_req = $request->id_req;
+        $ticket->numero = $request->numero;
+        $ticket->id_users = $request->id_users;
+        $ticket->id_estado = $request->id_estado;
+        $ticket->cometnarios = $request->cometnarios;
+
+        $ticket->save();
+    }
+
+
     }
 
     /**

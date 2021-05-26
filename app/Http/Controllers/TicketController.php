@@ -29,13 +29,17 @@ class TicketController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'cod' => ['required'],
             'numero' => ['required'],
+            'comentarios' => [],
+            'id_estado' => [],
+            'id_req' => ['required'],
 
         ]);
         $ticket = new Ticket();
-        $ticket->cod = $request->cod;
         $ticket->numero = $request->numero;
+        $ticket->id_estado = $request->id_estado;
+        $ticket->id_req = $request->id_req;
+        $ticket->comentarios = $request->comentarios;
 
         $ticket->save();
 
@@ -65,13 +69,14 @@ class TicketController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'cod' => [],
-            'numero' => [],
+            'comentarios' => [],
+            'id_estado' => [],
+
 
         ]);
         $ticket = Ticket::findOrFail($id);
-        $ticket->cod = $request->input('cod');
-        $ticket->calificacion = $request->input('numero');
+        $ticket->comentarios = $request->input('comentarios');
+        $ticket->id_estado = $request->input('id_estado');
         $ticket->save();
 
         return response()->json(['data' => $ticket], 201);
