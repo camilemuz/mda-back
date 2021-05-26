@@ -41,5 +41,17 @@ class UsersTableSeeder extends Seeder
 
 
         ]);
+
+        DB::table( 'users' )->insert([
+            'nombre'=>'Adminc',
+            'ap_paterno'=>'Adminp',
+            'ap_materno'=>'Adminm',
+            'email'  =>  'adminc@epsas.com' ,
+            'password'  =>  Hash::make( '12345678' ),
+            'id_cargo'=> '2',
+            'id_rol'=> '1',
+
+
+        ]);
     }
 }

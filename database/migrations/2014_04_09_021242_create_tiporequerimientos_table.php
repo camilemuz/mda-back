@@ -21,6 +21,9 @@ class CreateTiporequerimientosTable extends Migration
 
             $table->integer('id_categoria');
             $table->foreign('id_categoria')->references('id')->on('categorias');
+
+            $table->integer('id_division');
+            $table->foreign('id_division')->references('id')->on('divisions');
         });
     }
 

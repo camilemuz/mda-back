@@ -51,26 +51,19 @@ class RequerimientoController extends Controller
 
         $requerimiento->save();
 
-        return response()->json(['data' => $requerimiento], 201);
 
-        public  function ticket(Request $request){
 
-        $this->validate($request, [
-            'id_req' => [],
-            'numero' => [],
-            'id_estado' => [],
-            'cometnarios' => []
-        ]);
+
         $ticket = new Ticket();
-        $ticket->id_req = $request->id_req;
-        $ticket->numero = $request->numero;
-        $ticket->id_users = $request->id_users;
-        $ticket->id_estado = $request->id_estado;
-        $ticket->cometnarios = $request->cometnarios;
+        $ticket->id_req = 12;
+        $ticket->numero = mt_rand(1000,9000);
+
+        $ticket->id_estado = 1;
+        $ticket->comentarios = 'hola';
 
         $ticket->save();
-    }
 
+    return response()->json(['data' => $requerimiento], 201);
 
     }
 
@@ -118,6 +111,7 @@ class RequerimientoController extends Controller
         $requerimiento->save();
 
         return response()->json(['data' => $requerimiento], 201);
+
     }
 
     /**

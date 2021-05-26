@@ -16,6 +16,7 @@ class TipoRequerimientoController extends Controller
     public function index()
     {
         $tiporequerimientos = Tiporequerimiento::all();
+
        return response()->json(['data' => $tiporequerimientos], 200);
 
     }
@@ -34,12 +35,14 @@ class TipoRequerimientoController extends Controller
             'cod' => ['required'],
             'tiporeq' => ['required'],
             'id_categoria' => ['required'],
+            'id_division' => ['required'],
 
         ]);
         $tiporequerimiento = new Tiporequerimiento();
         $tiporequerimiento->cod= $request->cod;
         $tiporequerimiento->tiporeq = $request->tiporeq;
         $tiporequerimiento->id_categoria = $request->id_categoria;
+        $tiporequerimiento->id_division = $request->id_division;
         $tiporequerimiento->save();
 
         return response()->json(['data' => $tiporequerimiento], 201);
@@ -71,12 +74,14 @@ class TipoRequerimientoController extends Controller
             'cod' => [],
             'tiporeq' => [],
             'id_categoria' => [],
+            'id_division' => [],
 
         ]);
         $tiporequerimiento = Tiporequerimiento::findOrFail($id);
         $tiporequerimiento->cod = $request->input('cod');
         $tiporequerimiento->tiporeq = $request->input('tiporeq');
         $tiporequerimiento->id_categoria = $request->input('id_categoria');
+        $tiporequerimiento->id_division = $request->input('id_division');
         $tiporequerimiento->save();
 
         return response()->json(['data' => $tiporequerimiento], 201);
