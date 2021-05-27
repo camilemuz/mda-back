@@ -26,7 +26,7 @@ class TicketController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         $this->validate($request, [
             'numero' => ['required'],
@@ -44,7 +44,7 @@ class TicketController extends Controller
         $ticket->save();
 
         return response()->json(['data' => $ticket], 201);
-    }
+    }*/
 
     /**
      * Display the specified resource.

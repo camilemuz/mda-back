@@ -55,17 +55,20 @@ class RequerimientoController extends Controller
 
 
         $ticket = new Ticket();
-        $ticket->id_req = 12;
-        $ticket->numero = mt_rand(1000,9000);
-
+        $ticket-> id_req= $requerimiento->id;
+        $ticket->numero = random_int(10000, 99999);
         $ticket->id_estado = 1;
-        $ticket->comentarios = 'hola';
+        $ticket->comentarios = 'pon aquí tu comentario';
 
         $ticket->save();
 
     return response()->json(['data' => $requerimiento], 201);
 
     }
+
+
+
+
 
     /**
      * Display the specified resource.
