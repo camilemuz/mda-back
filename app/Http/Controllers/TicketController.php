@@ -66,7 +66,7 @@ class TicketController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, $id)
+   /* public function update(Request $request, $id)
     {
         $this->validate($request, [
             'comentarios' => [],
@@ -80,7 +80,7 @@ class TicketController extends Controller
         $ticket->save();
 
         return response()->json(['data' => $ticket], 201);
-    }
+    }*/
 
     /**
      * Remove the specified resource from storage.

@@ -110,8 +110,16 @@ class RequerimientoController extends Controller
         $requerimiento->id_tiporeq = $request->input('id_tiporeq');
         $requerimiento->id_departamento= $request->input('id_departamento');
 
-
         $requerimiento->save();
+
+        $ticket =  Ticket();
+        $ticket-> id_req= $requerimiento->id;
+        /*$ticket->numero = random_int(10000, 99999);*/
+        $ticket->id_estado = 1;
+        $ticket->comentarios = 'pon aquí tu comentario';
+
+        $ticket->save();
+
 
         return response()->json(['data' => $requerimiento], 201);
 
