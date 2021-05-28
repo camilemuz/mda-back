@@ -15,6 +15,8 @@ class RequerimientoController extends Controller
      */
     public function index()
     {
+
+
         $requerimiento = Requerimiento::all();
         return response()->json(['data' => $requerimiento], 200);
     }
@@ -95,9 +97,10 @@ class RequerimientoController extends Controller
         $this->validate($request, [
             'descripcion' => [],
             'interno' => [],
-            'id_users' => [],
             'id_tiporeq' => [],
             'id_departamento' => [],
+            'id_estado' => [],
+            'comentarios' => [],
 
 
 
@@ -106,19 +109,19 @@ class RequerimientoController extends Controller
         $requerimiento = Requerimiento::findOrFail($id);
         $requerimiento->descripcion = $request->input('descripcion');
         $requerimiento->interno = $request->input('interno');
-        $requerimiento->id_users = $request->input('id_users');
         $requerimiento->id_tiporeq = $request->input('id_tiporeq');
         $requerimiento->id_departamento= $request->input('id_departamento');
 
         $requerimiento->save();
 
-        $ticket =  Ticket();
-        $ticket-> id_req= $requerimiento->id;
+        Ticket::where('id_req',$id)->update(['id_estado'=>$request->id_estado,
+            'comentarios'=>$request->comentarios]);
+      /*  $ticket-> id_req= $id;*/
         /*$ticket->numero = random_int(10000, 99999);*/
-        $ticket->id_estado = 1;
-        $ticket->comentarios = 'pon aquí tu comentario';
+       /* $ticket->id_estado = $request->input('id_estado');
+        $ticket->comentarios = $request->input('comentarios');*/
 
-        $ticket->save();
+   /*      $ticket->save();*/
 
 
         return response()->json(['data' => $requerimiento], 201);

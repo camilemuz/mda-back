@@ -4,8 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use Illuminate\Http\Request;
+use DB;
 
 class TicketController extends Controller
+
+
+
+
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +19,7 @@ class TicketController extends Controller
      */
     public function index()
     {
+
         $tickets = Ticket::all();
 
         return response()->json(['data' => $tickets], 200);
